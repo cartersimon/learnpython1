@@ -1,1 +1,3 @@
 # learnpython1
+# following this tutorial to setup python/git/vscode integration...
+# https://5minutebi.com/2019/03/14/how-to-setup-vscode-for-python-and-github-integration/
