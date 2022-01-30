@@ -117,3 +117,51 @@ def check_my(seq, elem):
 
 # https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/python
 # sort vector of strings alphabetically (based on ASCII value) and return first value as a string with '***' between each letter. Don't add/remove array elements
+def two_sort_my(array):
+    array.sort()
+    return '***'.join(array[0])
+
+def two_sort_1(array):
+    return '***'.join(min(array))
+
+# https://www.codewars.com/kata/57e76bc428d6fbc2d500036d/python
+# split string into an array of words
+def string_to_array_my(s):
+    return s.split(" ")
+
+# https://www.codewars.com/kata/57f780909f7e8e3183000078/python
+# multiply integer array values
+def grow_my(arr):
+    total = 1
+    for i in arr:
+        total *= i
+    return total
+
+from functools import reduce
+def grow_1(arr):
+    return reduce(lambda x, y: x * y, arr)  # practice lambda functions and look up reduce function
+
+# https://www.codewars.com/kata/588417e576933b0ec9000045/python
+# calc how many ppl you will block on the way out of the cinema. Inputs are #rows, #columns, and your row & column. 
+# Total all the rows behind your row all the way to the end column
+# if your seat is col 5, row 3 (and cinema has 16 columns & 11 rows) then you will disturb everyone in... 
+# columns 5 -> 16 and rows 3 -> 11 (add one to column to account for your row)
+# i.e. (16 - 5) * (12 - 3) people = 12 * 9 = 96
+def seats_in_theater_my(tot_cols, tot_rows, col, row):
+    return ((tot_cols - col + 1) * (tot_rows - row))
+
+# https://www.codewars.com/kata/59342039eb450e39970000a6/python
+# given a number, return the number of positive odd numbers less than that number
+# oddCount(7) there are 3 odd numbers less than 7, i.e [1, 3, 5]. 7/2 = 3.5
+# oddCount(8) there are 4 odd numbers less than 8, i.e [1, 3, 5, 7]. 8/2 = 4
+def oddCount_my(n):
+    return int(n/2)
+
+def oddCount_1(n):
+    return n // 2
+
+# https://www.codewars.com/kata/5b077ebdaf15be5c7f000077/python
+# input is a positive integer, 3 for example, output is "1 sheep...2 sheep...3 sheep..."
+def count(n):
+    
+    return 
