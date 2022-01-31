@@ -1,4 +1,5 @@
 ## Below are katas from the following collection... https://www.codewars.com/collections/python-8kyu
+# Python-8kyu Collection 
 
 # https://www.codewars.com/kata/5aa736a455f906981800360d/python
 def feast(beast, dish):
@@ -162,6 +163,19 @@ def oddCount_1(n):
 
 # https://www.codewars.com/kata/5b077ebdaf15be5c7f000077/python
 # input is a positive integer, 3 for example, output is "1 sheep...2 sheep...3 sheep..."
-def count(n):
-    
-    return 
+def count_sheep_my(n):
+    s = ''
+    i = 1
+    while i <= n:
+        s += str(i) + " sheep..."
+        i += 1
+    return s
+
+def count_sheep_1(n):
+    return ''.join(f"{i} sheep..." for i in range(1,n+1))
+
+def count_sheep_2(n):
+    sheep=""
+    for i in range(1, n+1):
+        sheep+=str(i) + " sheep..."
+    return sheep
