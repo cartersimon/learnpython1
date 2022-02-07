@@ -32,6 +32,12 @@ s5 = 'how are you doing'
 mylist = s5.split()                         # creates list with 1 word for each element
 new_s5 = ' '.join(mylist)                   # join elements of list separating with a space
 
-# 1:13:11
+from timeit import default_timer as timer
+start = timer()                             # find out how long a section of code takes to run
+# some code                                 # 
+stop = timer()                              # 
+print(stop-start)                           # 
+
+# 1:16:40
 
 
