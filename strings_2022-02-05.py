@@ -33,11 +33,39 @@ mylist = s5.split()                         # creates list with 1 word for each 
 new_s5 = ' '.join(mylist)                   # join elements of list separating with a space
 
 from timeit import default_timer as timer
+
+my_list = ['a'] * 1000000
+# slow way
 start = timer()                             # find out how long a section of code takes to run
-# some code                                 # 
+my_str = ''                                 #
+for i in my_list:                           #
+    my_str += i                             #
 stop = timer()                              # 
 print(stop-start)                           # 
 
-# 1:16:40
+# fast way
+start = timer()                             
+my_str = ''.join(my_list)                   # much faster (30 times?) than above way of concating to a string
+stop = timer()                              # 
+print(stop-start)                           # 
 
+# Formatiting strings- %, format(), f-Strings
 
+var = "Tom"
+my_str = "the variable is %s" % var
+
+var = 3
+my_str = "the variable is %d" % var
+
+var = 3.23445645
+my_str = "the variable is %f" % var             # by default has 6 decimal places
+my_str = "the variable is %.2f" % var           # specify how many decimal places
+
+my_str = "the variable is {}".format(var)
+var2 = 6
+my_str = "the variable is {:.2f} and {}".format(var, var2)   # 2 decimal places
+
+# f-Strings python v3.6+
+my_str = f"the variable is {var} and {var2}"
+my_str = f"the variable is { var * 2 } and {var2}"  # curly braces are evaluated at runtime so can perform functions there
+print(my_str)
