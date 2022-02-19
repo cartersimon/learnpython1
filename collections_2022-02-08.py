@@ -18,5 +18,3 @@ from collections import namedtuple          # easy, lightweight colelction type 
 Point = namedtuple('Point', 'x,y')          # creates a calss called 'Point', with fields 'x' and 'y'
 pt = Point(1, -4)
 print(pt)                                   # Output... Point(x=1, y=-4)
-
-# 1:28:46
