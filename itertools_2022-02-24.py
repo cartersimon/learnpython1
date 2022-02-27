@@ -30,6 +30,11 @@ acc2 = accumulate(a, func=max())                # get maximum value
 # output... [1, 2, 5, 5, 5]
 
 from itertools import groupby
-# creates an iterator that returns keys and groups from ???
+# creates an iterator that returns keys and groups from an iteratable
+def smaller_than_3(x):
+    return x < 3
 
-# 1:45:11
+a = [1, 2, 3, 4]
+grp_obj = groupby(a, key=)
+
+# 1:46:18
