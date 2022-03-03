@@ -35,6 +35,49 @@ def smaller_than_3(x):
     return x < 3
 
 a = [1, 2, 3, 4]
-grp_obj = groupby(a, key=)
+grp_obj = groupby(a, key=smaller_than_3)
+# creates 2 groups (lists), values that match the key, and those that don't
+for key, value in grp_obj:
+    print(key,list(value))
+# Output...
+# True [1, 2]
+# False [3, 4]
 
-# 1:46:18
+# could also use a llambda function for the key...
+grp_obj2 = groupby(a, key=lambda x: x < 3)
+for key, value in grp_obj2:
+    print(key,list(value))
+
+people = [{'name': 'Tim', 'age': 25}, {'name': 'Dan', 'age': 25},
+        {'name': 'Lisa', 'age': 27}, {'name': 'Claire', 'age': 28}]
+grp_obj3 = groupby(people, key=lambda x: x['age'])
+for key, value in grp_obj3:
+    print(key,list(value))
+# Output...
+# 25 [{'name': 'Tim', 'age': 25}, {'name': 'Dan', 'age': 25}]
+# 27 [{'name': 'Lisa', 'age': 27}]
+# 28 [{'name': 'Claire', 'age': 28}]
+
+# some infinite iterators...
+from itertools import count, cycle, repeat
+for i in count(10):                                                     # creates a count from 10 to infinity
+    print(i)
+    if i == 15:                                                         # break at 15
+        break
+
+b = [1, 2, 3]
+for i in b:
+    print(i)                                                            # cycles thru all values in the list infinitely
+# Output... 
+# 1
+# 2
+# 3
+# 1
+# 2
+# etc...
+
+for i in repeat(1):                                                     # outputs 1 infinitely
+    print(i)
+
+for i in repeat(1, 4):                                                  # outputs 1 four times
+    print(i)
