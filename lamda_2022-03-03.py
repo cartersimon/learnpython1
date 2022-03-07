@@ -37,7 +37,7 @@ c2 = [x for x in a if x % 2 == 0 ]                                              
 
 # reduce(func, seq)                                                             # repeatedly applies func to seq to return a single value
 
-# 2:02:23
+from functools import reduce
+product_a = reduce(lambda x,y: x*y, a)                                          # reduce function always has 2 arguments
 
-
-# 1:51:53
+print(product_a)
